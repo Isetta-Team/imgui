@@ -1460,7 +1460,8 @@ enum ImGuiWindowFlags_ {
   // [Obsolete]
   // ImGuiWindowFlags_ShowBorders          = 1 << 7,   // --> Set
   // style.FrameBorderSize=1.0f / style.WindowBorderSize=1.0f to enable borders
-  // around windows and items ImGuiWindowFlags_ResizeFromAnySide    = 1 << 17, //
+  // around windows and items ImGuiWindowFlags_ResizeFromAnySide    = 1 << 17,
+  // //
   // --> Set io.ConfigResizeWindowsFromEdges and make sure mouse cursors are
   // supported by back-end (io.BackendFlags & ImGuiBackendFlags_HasMouseCursors)
 };
@@ -1929,9 +1930,9 @@ enum ImGuiCol_ {
   ImGuiCol_ColumnActive = ImGuiCol_SeparatorActive,
   ImGuiCol_ModalWindowDarkening = ImGuiCol_ModalWindowDimBg
 // ImGuiCol_CloseButton, ImGuiCol_CloseButtonActive,
-// ImGuiCol_CloseButtonHovered, // [unused since 1.60+] the close button now uses
-// regular button colors. ImGuiCol_ComboBg, // [unused since 1.53+] ComboBg has
-// been merged with PopupBg, so a redirect isn't accurate.
+// ImGuiCol_CloseButtonHovered, // [unused since 1.60+] the close button now
+// uses regular button colors. ImGuiCol_ComboBg, // [unused since 1.53+] ComboBg
+// has been merged with PopupBg, so a redirect isn't accurate.
 #endif
 };
 
@@ -2197,6 +2198,11 @@ struct ImGuiStyle {
 
   IMGUI_API ImGuiStyle();
   IMGUI_API void ScaleAllSizes(float scale_factor);
+
+#ifdef IM_GUI_STYLE_CLASS_EXTRA
+  IM_GUI_STYLE_CLASS_EXTRA
+
+  #endif
 };
 
 // This is where your app communicate with Dear ImGui. Access via
@@ -2946,8 +2952,8 @@ struct ImGuiInputTextCallbackData {
                    // string.length()
   int BufSize;     // Buffer capacity in bytes             // Read-only    //
                    // [Resize,Completion,History,Always] Include zero-terminator
-                // storage. In C land == ARRAYSIZE(my_char_array), in C++ land:
-                // string.capacity()+1
+  // storage. In C land == ARRAYSIZE(my_char_array), in C++ land:
+  // string.capacity()+1
   bool BufDirty;  // Set if you modify Buf/BufTextLen!!   // Write        //
                   // [Completion,History,Always]
   int CursorPos;  //                                      // Read-write   //
@@ -3728,9 +3734,10 @@ struct ImFontAtlas {
         const char* text_end =
             NULL);  // Add string (each character of the UTF-8 string are added)
     IMGUI_API void AddRanges(
-        const ImWchar* ranges);  // Add ranges, e.g.
-                                 // builder.AddRanges(ImFontAtlas::GetGlyphRangesDefault())
-                                 // to force add all of ASCII/Latin+Ext
+        const ImWchar*
+            ranges);  // Add ranges, e.g.
+                      // builder.AddRanges(ImFontAtlas::GetGlyphRangesDefault())
+                      // to force add all of ASCII/Latin+Ext
     IMGUI_API void BuildRanges(
         ImVector<ImWchar>* out_ranges);  // Output new ranges
   };

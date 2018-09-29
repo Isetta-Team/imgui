@@ -14,6 +14,9 @@
     <Filter Include="glad">
       <UniqueIdentifier>{e1a45db0-5ca9-4950-a682-3ec19d9437ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Isetta">
+      <UniqueIdentifier>{40fee926-84d7-4805-aa43-1c3420a03a6e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -40,6 +43,21 @@
     <ClCompile Include="..\..\imgui_widgets.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\Isetta\Core\Color.cpp">
+      <Filter>Isetta</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Isetta\Core\Math\Vector2.cpp">
+      <Filter>Isetta</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Isetta\Core\Math\Vector4.cpp">
+      <Filter>Isetta</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\glad\glad.c">
+      <Filter>glad</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Isetta\Core\Math\Utility.cpp">
+      <Filter>Isetta</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\imconfig.h">
@@ -62,6 +80,24 @@
     </ClInclude>
     <ClInclude Include="..\..\imgui_impl_opengl3.h">
       <Filter>sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Isetta\Core\Color.h">
+      <Filter>Isetta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Isetta\Core\Math\Vector2.h">
+      <Filter>Isetta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Isetta\Core\Math\Vector4.h">
+      <Filter>Isetta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glad\glad.h">
+      <Filter>glad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Isetta\Core\Math\Utility.h">
+      <Filter>Isetta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Isetta\Core\IsettaAlias.h">
+      <Filter>Isetta</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
