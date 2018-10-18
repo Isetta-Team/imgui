@@ -38,7 +38,17 @@
 // Windows) IMGUI_API is used for core imgui functions, IMGUI_IMPL_API is used
 // for the default bindings files (imgui_impl_xxx.h)
 #ifndef IMGUI_API
-#define IMGUI_API
+#define IMGUI_API __declspec(dllexport)
+
+//#if defined(IN_ENGINE) || defined(IN_TEST)
+//#define IMGUI_API
+//#else
+//#ifdef ISETTA_EXPORTS
+//#define IMGUI_API __declspec(dllexport)
+//#else
+//#define IMGUI_API __declspec(dllimport)
+//#endif
+//#endif
 #endif
 #ifndef IMGUI_IMPL_API
 #define IMGUI_IMPL_API IMGUI_API
@@ -2202,7 +2212,7 @@ struct ImGuiStyle {
 #ifdef IM_GUI_STYLE_CLASS_EXTRA
   IM_GUI_STYLE_CLASS_EXTRA
 
-  #endif
+#endif
 };
 
 // This is where your app communicate with Dear ImGui. Access via
