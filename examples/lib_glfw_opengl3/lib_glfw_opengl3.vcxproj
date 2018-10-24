@@ -270,7 +270,7 @@
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..;../..;../libs;../libs/glfw/include;../libs/gl3w;$(SolutionDir)Isetta</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;../..;../libs;../libs/glfw/include;../libs/gl3w;$(SolutionDir)IsettaEngine</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -342,7 +342,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>..;../..;../libs;../libs/glfw/include;../libs/gl3w;$(SolutionDir)Isetta</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;../..;../libs;../libs/glfw/include;../libs/gl3w;$(SolutionDir)IsettaEngine</AdditionalIncludeDirectories>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
