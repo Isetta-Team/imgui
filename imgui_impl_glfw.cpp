@@ -182,8 +182,10 @@ static bool ImGui_ImplGlfw_Init(GLFWwindow* window, bool install_callbacks,
       glfwCreateStandardCursor(GLFW_VRESIZE_CURSOR);
   g_MouseCursors[ImGuiMouseCursor_ResizeEW] =
       glfwCreateStandardCursor(GLFW_HRESIZE_CURSOR);
+  /// GLFW Crosshair Cursor
   g_MouseCursors[ImGuiMouseCursor_ResizeNESW] = glfwCreateStandardCursor(
-      GLFW_ARROW_CURSOR);  // FIXME: GLFW doesn't have this.
+      GLFW_CROSSHAIR_CURSOR);  // FIXME: GLFW doesn't have this.
+  /// GLFW Custom Cursor
   g_MouseCursors[ImGuiMouseCursor_ResizeNWSE] = glfwCreateStandardCursor(
       GLFW_ARROW_CURSOR);  // FIXME: GLFW doesn't have this.
   g_MouseCursors[ImGuiMouseCursor_Hand] =
@@ -257,6 +259,7 @@ static void ImGui_ImplGlfw_UpdateMouseCursor() {
     // Show OS mouse cursor
     // FIXME-PLATFORM: Unfocused windows seems to fail changing the mouse cursor
     // with GLFW 3.2, but 3.3 works here.
+    if (imgui_cursor == ImGuiMouseCursor_ResizeNWSE) return;
     glfwSetCursor(g_Window, g_MouseCursors[imgui_cursor]
                                 ? g_MouseCursors[imgui_cursor]
                                 : g_MouseCursors[ImGuiMouseCursor_Arrow]);
